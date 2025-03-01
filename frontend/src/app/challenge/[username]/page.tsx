@@ -51,13 +51,29 @@ export default function ChallengeRedirectPage() {
     }
   }, [username]);
 
-  const handleAcceptChallenge = () => {
-    router.push("/game");
+  const handleLogin = async (newUsername: string) => {
+    if (!newUsername.trim()) return;
+
+    try {
+      await login(newUsername);
+      router.push("/game");
+    } catch (err) {
+      setError("Failed to create user. Please try again.");
+      console.error(err);
+    }
   };
 
-  const handleLogin = async (newUsername: string) => {
-    await login(newUsername);
-    router.push("/game");
+  const handleAcceptChallenge = () => {
+    if (user) {
+      router.push("/game");
+    } else {
+      const usernameInput = document.getElementById(
+        "username-input"
+      ) as HTMLInputElement;
+      if (usernameInput?.value.trim()) {
+        handleLogin(usernameInput.value.trim());
+      }
+    }
   };
 
   if (isLoading) {
@@ -132,6 +148,7 @@ export default function ChallengeRedirectPage() {
               <p>You need to create a username to play</p>
               <div className="mt-2">
                 <input
+                  id="username-input"
                   type="text"
                   placeholder="Enter your username"
                   className="w-full p-2 rounded border"
@@ -148,8 +165,8 @@ export default function ChallengeRedirectPage() {
         <CardFooter>
           <Button
             className="w-full"
-            onClick={user ? handleAcceptChallenge : () => {}}
-            disabled={!user}
+            onClick={handleAcceptChallenge}
+            disabled={isLoading}
           >
             Accept Challenge
           </Button>
