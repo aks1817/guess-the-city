@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useGame } from "@/contexts/GameContext";
 import { useUser } from "@/contexts/UserContext";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,10 +12,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/components/ui/use-toast";
-import { ShareDialog } from "@/components/ShareDialog";
+} from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { useToast } from "../../components/ui/use-toast";
+import { ShareDialog } from "../../components/ShareDialog";
 import { FrownIcon, SmileIcon, ShareIcon, RefreshCwIcon } from "lucide-react";
 import confetti from "canvas-confetti";
 

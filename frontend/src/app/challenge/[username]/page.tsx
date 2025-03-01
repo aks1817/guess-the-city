@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { api } from "../../lib/api";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,8 +10,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "../../../components/ui/card";
+import { Badge } from "../../../components/ui/badge";
 import { useUser } from "@/contexts/UserContext";
 import { TrophyIcon } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";

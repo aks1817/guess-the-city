@@ -3,10 +3,10 @@
 import type React from "react";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ Use Next.js router
+import { useRouter } from "next/navigation";
 import { useUser } from "@/contexts/UserContext";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
 import {
   Card,
   CardContent,
@@ -14,7 +14,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import { GlobeIcon } from "lucide-react";
 
 export default function HomePage() {
