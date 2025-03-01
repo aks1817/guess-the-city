@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { useUser } from "../../contexts/UserContext";
 import { Button } from "../../components/ui/button";
 import {
@@ -16,13 +16,13 @@ import { UserIcon, LogOutIcon, ArrowLeftIcon } from "lucide-react";
 
 export default function ProfilePage() {
   const { user, logout } = useUser();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     if (!user) {
-      navigate("/");
+      router.push("/");
     }
-  }, [user, navigate]);
+  }, [user, router]);
 
   if (!user) {
     return null;
@@ -35,7 +35,11 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen p-4 bg-gradient-to-br from-blue-100 to-purple-100">
       <div className="max-w-md mx-auto">
-        <Button variant="ghost" className="mb-4" onClick={() => navigate(-1)}>
+        <Button
+          variant="ghost"
+          className="mb-4"
+          onClick={() => router.push("/game")}
+        >
           <ArrowLeftIcon className="h-4 w-4 mr-2" />
           Back
         </Button>
