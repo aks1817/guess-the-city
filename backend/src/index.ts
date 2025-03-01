@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes";
 import gameRoutes from "./routes/gameRoutes";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 
 dotenv.config();
 
@@ -34,4 +35,6 @@ mongoose
     console.error("MongoDB connection error:", error);
   });
 
-export default app;
+export default (req: VercelRequest, res: VercelResponse) => {
+  return app(req, res);
+};
