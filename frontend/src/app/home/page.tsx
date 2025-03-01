@@ -4,7 +4,7 @@ import type React from "react";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useUser } from "@/contexts/UserContext";
+import { useUser } from "../../contexts/UserContext";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import {

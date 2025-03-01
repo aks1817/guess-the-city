@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "../../../components/ui/card";
 import { Badge } from "../../../components/ui/badge";
-import { useUser } from "@/contexts/UserContext";
+import { useUser } from "../../../contexts/UserContext";
 import { TrophyIcon } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
 

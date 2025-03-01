@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { api } from "../app/lib/api";
-import { useUser } from "@/contexts/UserContext";
+import { useUser } from "../contexts/UserContext";
 
 interface Destination {
   id: string;

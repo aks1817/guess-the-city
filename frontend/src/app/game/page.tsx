@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useGame } from "@/contexts/GameContext";
-import { useUser } from "@/contexts/UserContext";
+import { useGame } from "../../contexts/GameContext";
+import { useUser } from "../../contexts/UserContext";
 import { Button } from "../../components/ui/button";
 import {
   Card,
